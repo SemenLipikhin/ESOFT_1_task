@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Дом, нарисованный с помощью HTML и CSS.">
+  <title>Дом — HTML и CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="scene">
+    <h1 class="scene__title">Мой уютный дом</h1>
+
+    <div class="sun" aria-hidden="true"></div>
+    <div class="cloud cloud--one" aria-hidden="true"></div>
+    <div class="cloud cloud--two" aria-hidden="true"></div>
+
+    <div class="house" role="img" aria-label="Дом с треугольной крышей, круглым окном, дверью и дымоходом">
+      <div class="house__chimney"></div>
+      <div class="house__roof"></div>
+
+      <div class="house__body">
+        <div class="house__window">
+          <span class="house__window-cross house__window-cross--vertical"></span>
+          <span class="house__window-cross house__window-cross--horizontal"></span>
+        </div>
+        <div class="house__door">
+          <span class="house__door-knob"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ground" aria-hidden="true"></div>
+    <p class="scene__caption">Дом, созданный только с помощью HTML и CSS</p>
+  </main>
+</body>
+</html>
