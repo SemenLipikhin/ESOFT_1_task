@@ -18,3 +18,5 @@
 Внешние библиотеки и изображения не используются.
 
 Ссылка на страницу: https://semenlipikhin.github.io/ESOFT_1_task/
+
+Ссылка на задание №2: https://github.com/SemenLipikhin/ESOFT_1_task/tree/main/task-2
