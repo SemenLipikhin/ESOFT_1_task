@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #302a26;
+}
+
+.scene {
+  position: relative;
+  width: min(100%, 1000px);
+  height: 650px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #d8c8b4 0%, #c6b39d 68%, #8b7968 68%);
+}
+
+.scene__title {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  color: #44352d;
+  text-align: center;
+  font-size: clamp(25px, 4vw, 38px);
+}
+
+.sun {
+  position: absolute;
+  top: 90px;
+  right: 130px;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: #d97835;
+  box-shadow: 0 0 0 12px rgb(217 120 53 / 22%);
+}
+
+.cloud {
+  position: absolute;
+  width: 115px;
+  height: 34px;
+  border-radius: 30px;
+  background: #f3e8d8;
+  opacity: .9;
+}
+
+.cloud::before,
+.cloud::after {
+  position: absolute;
+  bottom: 8px;
+  content: "";
+  border-radius: 50%;
+  background: inherit;
+}
+
+.cloud::before {
+  left: 20px;
+  width: 48px;
+  height: 48px;
+}
+
+.cloud::after {
+  right: 17px;
+  width: 38px;
+  height: 38px;
+}
+
+.cloud--one {
+  top: 145px;
+  left: 110px;
+}
+
+.cloud--two {
+  top: 225px;
+  right: 80px;
+  transform: scale(.75);
+}
+
+.house {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 105px;
+  width: 390px;
+  height: 330px;
+  transform: translateX(-50%);
+}
+
+.house__body {
+  position: absolute;
+  bottom: 0;
+  left: 35px;
+  width: 320px;
+  height: 220px;
+  border: 5px solid #49372d;
+  background-color: #b96545;
+  background-image: repeating-linear-gradient(0deg, transparent 0 27px, rgb(75 42 30 / 42%) 27px 30px), repeating-linear-gradient(90deg, transparent 0 62px, rgb(75 42 30 / 30%) 62px 65px);
+  box-shadow: inset 0 0 0 7px rgb(255 224 194 / 14%);
+}
+
+.house__roof {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-right: 195px solid transparent;
+  border-bottom: 135px solid #514039;
+  border-left: 195px solid transparent;
+  filter: drop-shadow(0 5px 0 #352820);
+}
+
+.house__chimney {
+  position: absolute;
+  top: 25px;
+  right: 65px;
+  z-index: 1;
+  width: 48px;
+  height: 105px;
+  border: 4px solid #111316;
+  background: #d97835;
+}
+
+.house__window {
+  position: absolute;
+  top: 35px;
+  left: 48px;
+  width: 78px;
+  height: 78px;
+  overflow: hidden;
+  border: 7px solid #f0dfc8;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9fc1bd, #547c7c);
+  box-shadow: 0 0 0 3px #49372d;
+}
+
+.house__window-cross {
+  position: absolute;
+  display: block;
+  background: #f0dfc8;
+}
+
+.house__window-cross--vertical {
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.house__window-cross--horizontal {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  transform: translateY(-50%);
+}
+
+.house__door {
+  position: absolute;
+  right: 48px;
+  bottom: 0;
+  width: 76px;
+  height: 145px;
+  border: 5px solid #49372d;
+  border-bottom: 0;
+  border-radius: 38px 38px 0 0;
+  background: #d97835;
+}
+
+.house__door-knob {
+  position: absolute;
+  top: 72px;
+  right: 10px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e8c28d;
+}
+
+.ground {
+  position: absolute;
+  right: -5%;
+  bottom: -70px;
+  left: -5%;
+  height: 150px;
+  border-radius: 50% 50% 0 0;
+  background: #786553;
+}
+
+.scene__caption {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+  color: #f7eee2;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 520px) {
+  .scene {
+    height: 560px;
+  }
+
+  .house {
+    bottom: 95px;
+    transform: translateX(-50%) scale(.78);
+    transform-origin: bottom center;
+  }
+
+  .sun {
+    top: 100px;
+    right: 35px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .cloud--one {
+    top: 160px;
+    left: 15px;
+    transform: scale(.75);
+  }
+
+  .cloud--two {
+    top: 245px;
+    right: -15px;
+    transform: scale(.6);
+  }
+}
