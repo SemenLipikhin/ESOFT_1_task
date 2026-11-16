@@ -62,3 +62,24 @@ typedCopy[0] = 99;
 assert.equal(typed[0], 10);
 
 console.log("Все тесты deepClone пройдены.");
+
+
+// Подклассы встроенных типов также сохраняют свой прототип.
+class CustomDate extends Date {}
+const customDate = new CustomDate("2026-01-01T00:00:00.000Z");
+const customDateCopy = deepClone(customDate);
+assert.equal(Object.getPrototypeOf(customDateCopy), CustomDate.prototype);
+assert.equal(customDateCopy.getTime(), customDate.getTime());
+
+class CustomMap extends Map {}
+const customMap = new CustomMap([["key", { value: 1 }]]);
+const customMapCopy = deepClone(customMap);
+assert.equal(Object.getPrototypeOf(customMapCopy), CustomMap.prototype);
+assert.notEqual(customMapCopy.get("key"), customMap.get("key"));
+
+// Символьные значения и функции как значения свойств сохраняются.
+const symbolValue = Symbol("value");
+const functionValue = () => "ok";
+const specialValuesCopy = deepClone({ symbolValue, functionValue });
+assert.equal(specialValuesCopy.symbolValue, symbolValue);
+assert.equal(specialValuesCopy.functionValue, functionValue);
