@@ -91,6 +91,10 @@ function deepClone(source) {
       copy = Object.create(Object.getPrototypeOf(value));
     }
 
+    // Сохраняем прототип и для встроенных объектов, и для их подклассов.
+    // Например, Date/Map/Set могут иметь пользовательские наследники.
+    Object.setPrototypeOf(copy, Object.getPrototypeOf(value));
+
     // Сохраняем ссылку до рекурсивного обхода: это разрывает циклы.
     visited.set(value, copy);
 
