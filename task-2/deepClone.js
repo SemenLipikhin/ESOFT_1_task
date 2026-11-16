@@ -100,7 +100,7 @@ function deepClone(source) {
       if (
         (value instanceof Map && key === "size") ||
         (value instanceof Set && key === "size") ||
-        (ArrayBuffer.isView(value) && typeof key === "string" && /^\\d+$/.test(key))
+        (ArrayBuffer.isView(value) && typeof key === "string" && /^\d+$/.test(key))
       ) {
         continue;
       }
@@ -117,7 +117,7 @@ function deepClone(source) {
       } catch (error) {
         // Некоторые встроенные свойства (например, typed array indices)
         // уже созданы конструктором и не требуют повторного определения.
-        if (!(ArrayBuffer.isView(value) && typeof key === "string" && /^\\d+$/.test(key))) {
+        if (!(ArrayBuffer.isView(value) && typeof key === "string" && /^\d+$/.test(key))) {
           throw error;
         }
       }
