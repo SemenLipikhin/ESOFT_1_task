@@ -14,6 +14,8 @@
 
 Запуск: откройте `index.html` в браузере.
 
+**Готовая страница:** [Открыть сайт на GitHub Pages](https://semenlipikhin.github.io/ESOFT_1_task/)
+
 [Открыть задание 1](https://github.com/SemenLipikhin/ESOFT_1_task)
 
 ## Задание 2 — Глубокое копирование объекта
