@@ -61,7 +61,6 @@ assert.notEqual(typedCopy.buffer, typed.buffer);
 typedCopy[0] = 99;
 assert.equal(typed[0], 10);
 
-console.log("Все тесты deepClone пройдены.");
 
 
 // Подклассы встроенных типов также сохраняют свой прототип.
@@ -83,3 +82,5 @@ const functionValue = () => "ok";
 const specialValuesCopy = deepClone({ symbolValue, functionValue });
 assert.equal(specialValuesCopy.symbolValue, symbolValue);
 assert.equal(specialValuesCopy.functionValue, functionValue);
+
+console.log("Все тесты deepClone пройдены.");
